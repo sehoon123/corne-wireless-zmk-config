@@ -84,6 +84,15 @@
         };
     };
 
+    macros {
+        plover_toggle: plover_toggle {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp P &kp H &kp R &kp O &kp L &kp G>;
+            label = "PLOVER_TOGGLE";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -155,10 +164,10 @@
 
         layer_5 {
             bindings = <
-&none  &kp Q           &kp W      &kp E         &kp R         &kp T        &kp Y  &kp U     &kp I      &kp O         &kp P      &kp LBKT
-&none  &kp A           &kp S      &kp D         &kp F         &kp G        &kp H  &kp J     &kp K      &kp L         &kp SEMI   &kp APOS
-&none  &kp LEFT_SHIFT  &kp LCTRL  &kp LEFT_ALT  &kp LEFT_WIN  &kp SPACE    &none  &kp LEFT  &kp DOWN   &kp UP_ARROW  &kp RIGHT  &none
-                                  &kp X         &kp C         &kp V        &kp N  &kp M     &kp COMMA
+&none           &kp Q           &kp W      &kp E         &kp R         &kp T        &kp Y  &kp U     &kp I      &kp O         &kp P      &kp LBKT
+&none           &kp A           &kp S      &kp D         &kp F         &kp G        &kp H  &kp J     &kp K      &kp L         &kp SEMI   &kp APOS
+&plover_toggle  &kp LEFT_SHIFT  &kp LCTRL  &kp LEFT_ALT  &kp LEFT_WIN  &kp SPACE    &none  &kp LEFT  &kp DOWN   &kp UP_ARROW  &kp RIGHT  &none
+                                           &kp X         &kp C         &kp V        &kp N  &kp M     &kp COMMA
             >;
         };
     };

@@ -17,58 +17,25 @@
     combos {
         compatible = "zmk,combos";
 
-        activate_f {
-            bindings = <&mo_function>;
-            key-positions = <13 14>;
-            timeout-ms = <20>;
-            layers = <0>;
-        };
-
         alt {
-            bindings = <&sticky_behavior LEFT_ALT>;
+            bindings = <&none>;
             key-positions = <37 40>;
             layers = <0>;
             slow-release;
         };
+
+        ralt {
+            bindings = <&kp RIGHT_ALT>;
+            key-positions = <40 41>;
+        };
     };
 
     behaviors {
-        z_alt: z_alt {
+        function_layer: function_layer {
             compatible = "zmk,behavior-tap-dance";
-            label = "Z_ALT";
+            label = "FUNCTION_LAYER";
             #binding-cells = <0>;
-            bindings = <&kp Z>, <&kp LEFT_ALT>;
-        };
-
-        Number_Layer: Number_Layer {
-            compatible = "zmk,behavior-tap-dance";
-            label = "NUMBER_LAYER";
-            #binding-cells = <0>;
-            bindings = <&mo 1>, <&mo 0>;
-        };
-
-        mo_function: mo_function {
-            compatible = "zmk,behavior-tap-dance";
-            label = "MO_FUNCTION";
-            #binding-cells = <0>;
-            bindings = <&mo 3>, <&to 3>;
-        };
-
-        mo_number: mo_number {
-            compatible = "zmk,behavior-tap-dance";
-            label = "MO_NUMBER";
-            #binding-cells = <0>;
-            bindings = <&mo 0>, <&to 0>;
-        };
-
-        sticky_behavior: sticky_behavior {
-            compatible = "zmk,behavior-sticky-key";
-            label = "STICKY_BEHAVIOR";
-            bindings = <&kp>;
-            #binding-cells = <1>;
-            release-after-ms = <1500>;
-            quick-release;
-            ignore-modifiers;
+            bindings = <&mo 1>, <&mo 3>;
         };
     };
 
@@ -84,10 +51,10 @@
 
             label = "Base";
             bindings = <
-&kp TAB         &kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y    &kp U  &kp I            &kp O    &kp P     &kp BSPC
-&kp LCTRL       &kp A  &kp S  &kp D     &kp F  &kp G        &kp H    &kp J  &kp K            &kp L    &kp SEMI  &kp SQT
-&kp LEFT_SHIFT  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N    &kp M  &kp COMMA        &kp DOT  &kp FSLH  &kp ESC
-                              &kp LGUI  &mo 1  &kp SPACE    &kp RET  &mo 2  &lt 2 RIGHT_ALT
+&kp TAB         &kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y    &kp U  &kp I        &kp O    &kp P     &kp BSPC
+&kp LCTRL       &kp A  &kp S  &kp D     &kp F  &kp G        &kp H    &kp J  &kp K        &kp L    &kp SEMI  &kp SQT
+&kp LEFT_SHIFT  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N    &kp M  &kp COMMA    &kp DOT  &kp FSLH  &kp ESC
+                              &kp LGUI  &mo 1  &kp SPACE    &kp RET  &mo 2  &key_repeat
             >;
         };
 
